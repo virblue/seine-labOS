@@ -1,3 +1,3 @@
 # types
 
-Shared package for Integrated Lab Manager.
+Shared package for Seine Lab OS (Viridian Blue Labs).

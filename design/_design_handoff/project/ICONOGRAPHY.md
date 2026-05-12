@@ -50,7 +50,7 @@ These are translucent-glass renders with viridian highlights — the visual sign
 
 ## Wordmark
 
-Inline text: `RHINE LAB —∞— Integrated Lab Manager OS`. The em-dashes flank a small infinity glyph. In code:
+Inline text (historical sample tenant): `RHINE LAB —∞— Integrated Lab Manager OS`. The em-dashes flank a small infinity glyph. For the current product the equivalent reads `<tenant> —∞— Seine Lab OS`. In code:
 
 ```html
 <div class="ils-brand-mark">

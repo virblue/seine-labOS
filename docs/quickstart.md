@@ -1,6 +1,6 @@
-# ILM Quickstart
+# Seine Lab OS Quickstart
 
-This guide gets a local ILM environment running against your Supabase project.
+This guide gets a local Seine Lab OS environment running against your Supabase project.
 
 ## 1) Prerequisites
 
@@ -17,8 +17,8 @@ This guide gets a local ILM environment running against your Supabase project.
 ## 2) Clone + install
 
 ```bash
-git clone https://github.com/Euchiz/ILM.git
-cd ILM
+git clone https://github.com/virblue/seine-labOS.git
+cd seine-labOS
 npm install
 ```
 
@@ -73,14 +73,14 @@ In GitHub repository settings, add Actions secrets:
 - `VITE_SUPABASE_URL`
 - `VITE_SUPABASE_ANON_KEY`
 
-Deploy pipeline builds static bundles for root + sibling app paths under `/ILM/`.
+Deploy pipeline builds static bundles for root + sibling app paths under `/seine-labOS/`.
 
 ## 8) First-run sanity checks
 
 After sign-up/sign-in:
 
 1. Create a lab in the lab picker.
-2. Verify Home (`/ILM/`) loads dashboard cards.
+2. Verify Home (`/seine-labOS/`) loads dashboard cards.
 3. Open Protocol / Project / Supply / Scheduler / Data Hub and confirm data reads/writes succeed.
 4. Confirm role-based behaviors (member vs admin/owner) are enforced.
 

@@ -1,3 +1,3 @@
 # Examples
 
-Reference example data for Integrated Lab Manager modules.
+Reference example data for Seine Lab OS modules.

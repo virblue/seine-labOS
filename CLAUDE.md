@@ -1,9 +1,11 @@
-# ILM (Integrated Lab Manager)
+# Seine Lab OS
+
+**Seine Lab OS** is the user-facing product name (under the **Viridian Blue Labs** umbrella). Internal identifiers — npm scope `@ilm/*`, migration filenames, HPC mount path — still reflect the previous name (Integrated Lab Manager / ILM) and are intentionally left in place for stability. When in doubt: product copy uses "Seine Lab OS"; code/package paths keep the legacy names until they're refactored deliberately.
 
 ## Repository
 
-- GitHub: https://github.com/Euchiz/ILM.git
-- Local path: `/mnt/isilon/wang_lab/zac/projects/ILM`
+- GitHub: https://github.com/virblue/seine-labOS.git
+- Local path: `/mnt/isilon/wang_lab/zac/projects/ILM` (HPC mount, not yet renamed)
 - Primary branch: `main`
 
 ## Project Structure
@@ -58,7 +60,7 @@ singularity exec --bind /mnt/isilon/wang_lab/zac/projects/ILM:/work docker://nod
 
 ## Supabase Migration (Stage 4c — Supply Manager next)
 
-ILM has moved from browser-only storage to Supabase Postgres + Supabase Auth,
+Seine Lab OS has moved from browser-only storage to Supabase Postgres + Supabase Auth,
 while staying deployable to GitHub Pages (no custom backend). Auth model: each
 user has a personal account; users belong to one or more shared `labs` via
 `lab_memberships`; all data is scoped to a lab and protected by RLS.

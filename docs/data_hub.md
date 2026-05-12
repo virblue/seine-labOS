@@ -1,12 +1,12 @@
-# Codex Implementation Brief: Data Hub / Data Lake Module for ILM
+# Codex Implementation Brief: Data Hub / Data Lake Module for Seine Lab OS
 
 ## Goal
 
-Add a new **Data Hub** module to the Integrated Lab Manager (ILM).
+Add a new **Data Hub** module to **Seine Lab OS** (formerly Integrated Lab Manager / ILM).
 
 The module should help a lab track, discover, request, and reuse datasets generated across projects or obtained from external sources. It should **not** try to store large data files in the app. Instead, it should act as a **dataset registry + reuse/access workflow + lightweight lineage tracker**.
 
-Use **Data Hub** as the user-facing module name. Use **Data Lake** as the conceptual backend/storage metaphor where helpful, but do not imply that ILM itself stores raw datasets.
+Use **Data Hub** as the user-facing module name. Use **Data Lake** as the conceptual backend/storage metaphor where helpful, but do not imply that Seine Lab OS itself stores raw datasets.
 
 Core question the module should answer:
 
@@ -82,7 +82,7 @@ Suggested subviews/tabs:
 /data-hub/:datasetId/requests
 ```
 
-If the existing ILM routing style differs, adapt to the current project structure.
+If the existing Seine Lab OS routing style differs, adapt to the current project structure.
 
 ---
 
@@ -231,7 +231,7 @@ The field **“Do not use for...”** is important. Many datasets are useful for
 
 ## Data Model
 
-Use the existing data backend pattern if the project already has one. If ILM is using Supabase/Postgres, implement the following tables.
+Use the existing data backend pattern if the project already has one. If Seine Lab OS is using Supabase/Postgres, implement the following tables.
 
 ### Enums / Controlled Vocabulary
 
@@ -456,7 +456,7 @@ create index if not exists idx_dataset_tags_tag on dataset_tags(tag);
 
 ## Row-Level Security / Permissions
 
-If Supabase RLS is already used, add policies consistent with the rest of ILM.
+If Supabase RLS is already used, add policies consistent with the rest of Seine Lab OS.
 
 Recommended logic:
 
@@ -502,7 +502,7 @@ DatasetTagList
 StorageUriDisplay
 ```
 
-Use the existing ILM visual style. For Viridian Blue / neo-skeuomorphic futurism style, the module can use:
+Use the existing Seine Lab OS visual style. For Viridian Blue / neo-skeuomorphic futurism style, the module can use:
 
 - Soft cards
 - Clean green/blue accent badges
@@ -719,7 +719,7 @@ Recommended module description:
 
 Tooltip for storage URI:
 
-> ILM stores a reference to the dataset location, not the dataset files themselves.
+> Seine Lab OS stores a reference to the dataset location, not the dataset files themselves.
 
 Tooltip for access level:
 
@@ -836,8 +836,8 @@ The implementation is complete when:
 7. A dataset owner/admin can approve or deny a request.
 8. Approved reuse is visible on the dataset detail page.
 9. External datasets can be registered with accession/citation/license information.
-10. The UI makes clear that ILM stores metadata and locations, not raw large files.
-11. Existing ILM modules continue to work.
+10. The UI makes clear that Seine Lab OS stores metadata and locations, not raw large files.
+11. Existing Seine Lab OS modules continue to work.
 
 ---
 
@@ -877,5 +877,5 @@ Technical object: Dataset Registry
 Rationale:
 
 - **Data Hub** feels approachable and product-friendly.
-- **Data Lake** captures the idea of scattered data storage, but should not imply ILM stores all raw files.
+- **Data Lake** captures the idea of scattered data storage, but should not imply Seine Lab OS stores all raw files.
 - **Dataset Registry** is the precise technical implementation.

@@ -1,9 +1,9 @@
 # Viridian Blue Labs Design System
 
-Product design guidance for Integrated Lab Manager (ILM).
+Product design guidance for **Seine Lab OS** (previously named Integrated Lab Manager).
 
 This document translates the Viridian Blue Labs identity into a reusable UI system
-for the ILM product family. It is not based on the fictional "Rhine Lab" text in
+for the Seine Lab OS product family. It is not based on the fictional "Rhine Lab" text in
 the AI-generated visual template; that template is useful only as an aesthetic
 reference for light, tactile, scientific dashboards.
 
@@ -15,11 +15,11 @@ use them.
 ## Product Context
 
 Viridian Blue Labs builds integrated, scientist-friendly software for modern
-bioscience teams. The first product direction is Integrated Lab Manager: a
+bioscience teams. The first product direction is Seine Lab OS: a
 crosslinked workspace that helps labs manage projects, protocols, supplies,
 funding, schedules, teams, and operational knowledge as one connected system.
 
-ILM is not just an ELN, inventory system, project tracker, calendar, or admin
+Seine Lab OS is not just an ELN, inventory system, project tracker, calendar, or admin
 dashboard. It is the operating layer across lab operations. The interface must
 make relationships visible: projects link to protocols, protocols link to
 materials and equipment, supplies link to experiments and funding, people link
@@ -90,7 +90,7 @@ It should avoid:
    navigation should show what an item belongs to, depends on, or affects.
 
 3. **Comprehensive but usable.**
-   ILM must support real lab complexity without making every screen dense by
+   Seine Lab OS must support real lab complexity without making every screen dense by
    default. Progressive disclosure beats giant forms.
 
 4. **Structure before atmosphere.**
@@ -150,8 +150,8 @@ Token direction:
 
 - Add role tokens: `--ilm-font-body`, `--ilm-font-display`, `--ilm-font-mono`.
 - The current codebase uses historical `--rl-*` tokens in `@ilm/ui`. Keep them
-  during migration, but new documentation and product language should use ILM /
-  Viridian Blue naming.
+  during migration, but new documentation and product language should use
+  **Seine Lab OS** / **Viridian Blue Labs** naming.
 
 ## Color System
 
@@ -179,7 +179,7 @@ Rules:
 
 ## Layout System
 
-ILM needs both dense operational screens and calm overview screens. The shared
+Seine Lab OS needs both dense operational screens and calm overview screens. The shared
 layout system should support both without changing visual identity.
 
 Global shell:
@@ -500,7 +500,7 @@ Keep the existing rule from `docs/ui-alignment.md`:
 New module UI should answer these before merge:
 
 - Does it use the shared app shell and primitives where available?
-- Does it use Viridian Blue / ILM product language rather than template brand
+- Does it use Viridian Blue / Seine Lab OS product language rather than template brand
   language?
 - Does it use role-based typography?
 - Does it preserve the body/display distinction?

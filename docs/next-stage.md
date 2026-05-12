@@ -1,4 +1,4 @@
-# ILM - Next stage plan
+# Seine Lab OS — Next stage plan
 
 Rewrite this file when priorities change. It always describes *the current planned next stage*, not historical stages.
 

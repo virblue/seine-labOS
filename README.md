@@ -1,10 +1,12 @@
-# Integrated Lab Manager (ILM)
+# Seine Lab OS
 
-Integrated Lab Manager is a static-first, Supabase-backed lab operations platform built as an npm workspaces monorepo. It provides modular apps for protocols, projects, inventory/supply, scheduling, funding-directory routing, and dataset registry workflows.
+**Seine Lab OS** is a static-first, Supabase-backed lab operations platform from **Viridian Blue Labs**, built as an npm workspaces monorepo. It provides modular apps for protocols, projects, inventory/supply, scheduling, funding-directory routing, and dataset registry workflows.
+
+> Internal package names (`@ilm/*`) and migration files still reflect the previous product name (Integrated Lab Manager). They're stable identifiers and will move on a separate refactor; the user-facing product is Seine Lab OS.
 
 ## What is shipped today
 
-ILM is now a mature multi-app suite with production Supabase + RLS workflows:
+Seine Lab OS is now a mature multi-app suite with production Supabase + RLS workflows:
 
 - **Account / Home** (`/`) — lab-wide operations dashboard, membership/roles, invitations, join requests, and cross-app review routing.
 - **Protocol Manager** (`/protocol-manager/`) — typed protocol editor with draft → submit → review → publish and append-only revisions.
@@ -22,7 +24,7 @@ For the currently planned follow-up scope, see [`docs/next-stage.md`](docs/next-
 - **React + TypeScript + Vite** per app.
 - **Supabase Postgres + Auth** for persistence and identity.
 - **Row Level Security on every app table**; authorization is data-driven from `lab_memberships` and domain ownership/role policies.
-- **Shared UI & types** through internal packages (`@ilm/ui`, `@ilm/types`, `@ilm/utils`, `@ilm/validation`, `@ilm/ai-import`).
+- **Shared UI & types** through internal packages (`@ilm/ui`, `@ilm/types`, `@ilm/utils`, `@ilm/validation`, `@ilm/ai-import`) — npm scope retained for now.
 
 ## Monorepo layout
 
@@ -68,9 +70,9 @@ Use the dedicated quickstart guide:
 
 ## Deployment
 
-ILM deploys to GitHub Pages via GitHub Actions from `main`.
+Seine Lab OS deploys to GitHub Pages via GitHub Actions from `main`.
 
-- Site root (Account/Home): `https://euchiz.github.io/ILM/`
+- Site root (Account/Home): `https://virblue.github.io/seine-labOS/`
 - App paths: `/protocol-manager/`, `/project-manager/`, `/supply-manager/`, `/funding-manager/`, `/scheduler/`, `/data-hub/`
 
 Set repository secrets for build-time env injection:

@@ -124,9 +124,9 @@ The result is a clearer operating environment where labs can see context, coordi
 
 ## 11. Foundational Product
 
-## Integrated Lab Manager / ILM
+## Seine Lab OS (formerly Integrated Lab Manager / ILM)
 
-The first major product direction is an **Integrated Lab Management System** for comprehensive but easy management of lab affairs.
+The first major product direction is **Seine Lab OS**, an **Integrated Lab Management System** for comprehensive but easy management of lab affairs.
 
 ### Core Domains
 
@@ -145,7 +145,7 @@ The first major product direction is an **Integrated Lab Management System** for
 
 ### Product Positioning
 
-ILM is not only:
+Seine Lab OS is not only:
 
 - an ELN
 - an inventory tool
@@ -580,9 +580,9 @@ Avoid abbreviating to **VBL** in public-facing material unless the full name has
 
 ## Preferred Product Family Language
 
-- Viridian Blue Labs
-- Viridian Blue ILM
-- Integrated Lab Manager
+- Viridian Blue Labs (parent company / publisher)
+- Seine Lab OS (current product name; formerly Integrated Lab Manager / ILM / Viridian Blue ILM)
+- Hermes Daybook (trip-planning companion product)
 - Viridian OS, if the product ecosystem later expands into a broader operating-layer brand
 
 ## Recommended Visual Direction for Design Prompts

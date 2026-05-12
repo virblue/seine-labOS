@@ -1,6 +1,6 @@
 # UI alignment plan
 
-Shared design system for all ILM apps. Drafted 2026-04-23.
+Shared design system for all Seine Lab OS apps. Drafted 2026-04-23.
 
 ## Why
 

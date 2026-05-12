@@ -1,12 +1,12 @@
-# Adding a new ILM module (Facility, Funding, …)
+# Adding a new Seine Lab OS module (Facility, Funding, …)
 
-Every ILM module — Account/home, Project Manager, Protocol Manager, Supply
+Every Seine Lab OS module — Account/home, Project Manager, Protocol Manager, Supply
 Manager, Funding Manager (Stage 4d), the upcoming Facility / Calendar
 modules — ships as its own Vite app under `apps/<name>/` but renders inside
 the **shared `<LabShell>` chrome** from `@ilm/ui`. That gives the user a
 consistent left sidebar (10 nav items), topbar, profile orb, and sign-out
 button across every page, even though each app deploys to its own URL
-(`/ILM/<name>/`).
+(`/seine-labOS/<name>/`).
 
 Use this guide when scaffolding a new module. Reading it should take five
 minutes; following it is mostly copy/paste.
@@ -67,7 +67,7 @@ export default defineConfig({ base, server: { port: 51XX } });
 
 Pick an unused dev port (5173–5180 are taken). The `VITE_BASE_PATH` env var
 is what the deploy workflow uses to mount your dist under
-`/ILM/<your-app>/`.
+`/seine-labOS/<your-app>/`.
 
 ## 3. Wire the shell
 
@@ -162,7 +162,7 @@ and add **two** stanzas:
 - name: Build <Your App> for Pages
   run: npm run build -w @ilm/<your-app>
   env:
-    VITE_BASE_PATH: /ILM/<your-app>/
+    VITE_BASE_PATH: /seine-labOS/<your-app>/
     VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
     VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
 ```

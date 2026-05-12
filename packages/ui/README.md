@@ -1,6 +1,6 @@
 # @ilm/ui
 
-Shared React and CSS UI package for Integrated Lab Manager.
+Shared React and CSS UI package for Seine Lab OS (Viridian Blue Labs).
 
 Import order for every app:
 

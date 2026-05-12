@@ -1,4 +1,4 @@
-You are working on my Integrated Lab Manager app.
+You are working on my Seine Lab OS app (previously called Integrated Lab Manager).
 
 Goal:
 Implement a new Supply Manager module for lab inventory and ordering. This should integrate with the existing app structure, authentication, project system, and visual design. Do not implement equipment management in this module. Equipment will be a separate feature later.
@@ -330,7 +330,7 @@ Actions:
 - view project-associated supplies
 
 UX requirements:
-- Keep the UI clean and consistent with the existing Integrated Lab Manager style.
+- Keep the UI clean and consistent with the existing Seine Lab OS style.
 - Use clear status badges for:
   - stock status
   - request status
@@ -390,5 +390,5 @@ Acceptance criteria:
 - An admin can mark an order as received and optionally add lot/expiration information.
 - My Items only shows items relevant to the user’s project memberships plus general items.
 - Old inventory checks trigger a non-blocking “better check first” warning.
-- The app remains visually consistent with the existing Integrated Lab Manager.
+- The app remains visually consistent with the existing Seine Lab OS.
 - No equipment management is implemented.

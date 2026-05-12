@@ -1,6 +1,6 @@
-# ILM — Integrated Lab Manager UI Kit
+# Seine Lab OS UI Kit (folder: `ilm/`)
 
-A pixel-faithful recreation of the Viridian Blue Labs Integrated Lab Manager OS dashboard, derived from the `Euchiz/ILM` source code (`apps/account/`, `packages/ui/`).
+A pixel-faithful recreation of the Viridian Blue Labs **Seine Lab OS** (formerly Integrated Lab Manager) dashboard, derived from the `virblue/seine-labOS` source code (`apps/account/`, `packages/ui/`). The `ilm/` folder name is retained for path stability.
 
 ## Files
 - `index.html` — interactive clickthrough (auth → lab picker → overview → team → settings)

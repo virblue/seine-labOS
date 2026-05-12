@@ -8,19 +8,19 @@
 
 ## 1. Company
 
-Viridian Blue Labs builds calm, connected software for bioscience teams. Their first product is the **Integrated Lab Manager (ILM)** — a crosslinked workspace covering projects, protocols, supplies, funding, schedules, teams, and lab knowledge.
+Viridian Blue Labs builds calm, connected software for bioscience teams. Their first product is **Seine Lab OS** (formerly Integrated Lab Manager / ILM) — a crosslinked workspace covering projects, protocols, supplies, funding, schedules, teams, and lab knowledge.
 
 - **Brand name in formal contexts:** Viridian Blue Labs
 - **Short brand:** Viridian Blue
-- **Product:** Integrated Lab Manager / ILM (sometimes branded as `Rhine Lab L.L.C. — Lab Manager OS` inside the product UI as a sample tenant)
+- **Product:** Seine Lab OS (formerly Integrated Lab Manager / ILM; sometimes branded as `Rhine Lab L.L.C. — Lab Manager OS` inside the product UI as a sample tenant)
 - **One-line:** *Integrated software for connected bioscience labs.*
 
 ## 2. Sources
 
 This design system is distilled from:
 
-- **Brand brief:** `Euchiz/ILM` repository, file `design/Viridian_Blue_Labs_README.md` (full brand bible — name rationale, mission, vision, taglines, manifesto, tone, visual direction).
-- **Product source code:** `Euchiz/ILM` GitHub repo (npm-workspaces monorepo). Key UI files imported into `apps/`, `packages/`. Production-ready apps: Account/Home, Protocol Manager, Project Manager. In-flight: Supply Manager. Deferred: Funding Manager. Foundation: Scheduler.
+- **Brand brief:** `virblue/seine-labOS` repository, file `design/Viridian_Blue_Labs_README.md` (full brand bible — name rationale, mission, vision, taglines, manifesto, tone, visual direction).
+- **Product source code:** `virblue/seine-labOS` GitHub repo (npm-workspaces monorepo). Key UI files imported into `apps/`, `packages/`. Production-ready apps: Account/Home, Protocol Manager, Project Manager, Supply Manager, Data Hub. Foundation: Scheduler. Deferred: full Funding Manager (financial).
 - **Visual references uploaded by the user:** `uploads/web.png` (full dashboard render), `uploads/geo-mark.png`, `uploads/infinity.png`, `uploads/lab-corridor.png`, `uploads/radar.png`. These are the same assets shipped under `design/segments/` in the repo and `apps/account/public/assets/`.
 - **Tokens of record:** `packages/ui/src/tokens.css` (`--ilm-*` and legacy `--rl-*`), `packages/ui/src/primitives/primitives.css`, `packages/ui/src/lab-shell.css`.
 
@@ -153,13 +153,13 @@ How Viridian Blue Labs writes:
 | `SKILL.md` | Cross-compatible Agent Skill manifest for downstream use. |
 | `assets/` | `geo-mark.png`, `infinity.png`, `lab-corridor.png`, `radar.png`, `donut.png`, `web.png`. |
 | `preview/` | Design System tab cards (type / color / spacing / components / brand). |
-| `ui_kits/ilm/` | Integrated Lab Manager UI kit — 5 core screens, modular JSX components, `index.html` clickthrough. |
-| `apps/`, `packages/`, `design/` | Imported source files from `Euchiz/ILM` for reference. |
+| `ui_kits/ilm/` | Seine Lab OS UI kit — 5 core screens, modular JSX components, `index.html` clickthrough. Folder name `ilm/` retained for path stability. |
+| `apps/`, `packages/`, `design/` | Imported source files from `virblue/seine-labOS` for reference. |
 
 ---
 
 ## 7. Caveats / What's missing
 
 - **Fonts:** Space Grotesk is now bundled locally as a variable TTF in `fonts/`. Inter and JetBrains Mono still load from Google Fonts CDN — drop local files into `fonts/` if you license them.
-- **Logo:** the brand brief talks about "Viridian Blue Labs" but the in-product wordmark visible is `RHINE LAB —∞— Integrated Lab Manager OS`. We've preserved that as the canonical product-tenant chrome and treat **Viridian Blue Labs** as the parent company / publisher.
+- **Logo:** the brand brief talks about "Viridian Blue Labs" but the historical in-product wordmark seen in design assets is `RHINE LAB —∞— Integrated Lab Manager OS`. Treat that as the canonical sample-tenant chrome (Rhine Lab L.L.C. is an example lab). The product itself is **Seine Lab OS**, published by **Viridian Blue Labs**.
 - **No marketing site** exists in source — UI kit covers product surfaces only.
