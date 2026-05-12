@@ -1,4 +1,4 @@
-name: Deploy ILM Apps to GitHub Pages
+name: Deploy Seine Lab OS Apps to GitHub Pages
 
 on:
   push:
@@ -34,49 +34,49 @@ jobs:
       - name: Build Account (home) for Pages
         run: npm run build -w @ilm/account
         env:
-          VITE_BASE_PATH: /ILM/
+          VITE_BASE_PATH: /seine-labOS/
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
 
       - name: Build Protocol Manager for Pages
         run: npm run build -w @ilm/protocol-manager
         env:
-          VITE_BASE_PATH: /ILM/protocol-manager/
+          VITE_BASE_PATH: /seine-labOS/protocol-manager/
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
 
       - name: Build Project Manager for Pages
         run: npm run build -w @ilm/project-manager
         env:
-          VITE_BASE_PATH: /ILM/project-manager/
+          VITE_BASE_PATH: /seine-labOS/project-manager/
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
 
       - name: Build Supply Manager for Pages
         run: npm run build -w @ilm/supply-manager
         env:
-          VITE_BASE_PATH: /ILM/supply-manager/
+          VITE_BASE_PATH: /seine-labOS/supply-manager/
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
 
       - name: Build Funding Manager for Pages
         run: npm run build -w @ilm/funding-manager
         env:
-          VITE_BASE_PATH: /ILM/funding-manager/
+          VITE_BASE_PATH: /seine-labOS/funding-manager/
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
 
       - name: Build Data Hub for Pages
         run: npm run build -w @ilm/data-hub
         env:
-          VITE_BASE_PATH: /ILM/data-hub/
+          VITE_BASE_PATH: /seine-labOS/data-hub/
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
 
       - name: Build Scheduler for Pages
         run: npm run build -w @ilm/scheduler
         env:
-          VITE_BASE_PATH: /ILM/scheduler/
+          VITE_BASE_PATH: /seine-labOS/scheduler/
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
 
@@ -94,7 +94,7 @@ jobs:
           # SPA fallback: GitHub Pages serves /<site>/404.html for any missing
           # path under the site. The Account shell now lives at the site root
           # and owns client-side routes (`/join/<uuid>`, `#/team`, ...), so
-          # 404.html is the same shell. Assets resolve against its base /ILM/.
+          # 404.html is the same shell. Assets resolve against its base /seine-labOS/.
           cp .pages-dist/index.html .pages-dist/404.html
 
       - name: Setup Pages
