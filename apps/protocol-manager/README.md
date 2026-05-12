@@ -37,7 +37,7 @@ This app is set up for GitHub Pages deployment at:
 
 The lab-wide home dashboard (Account app) owns the bare site root `https://virblue.github.io/seine-labOS/`. Protocol Manager itself mounts at `https://virblue.github.io/seine-labOS/protocol-manager/`.
 
-The GitHub Actions workflow builds the app with `VITE_BASE_PATH=/seine-labOS/protocol-manager/` so the generated asset URLs work correctly when served from the repository project site path. (Note: the workflow file still has `/ILM/` and needs to be updated alongside this README for the deploy to actually serve at the new path.)
+The GitHub Actions workflow builds the app with `VITE_BASE_PATH=/seine-labOS/protocol-manager/` so the generated asset URLs work correctly when served from the repository project site path.
 
 ## Data model principles
 
