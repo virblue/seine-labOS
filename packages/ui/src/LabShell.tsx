@@ -9,8 +9,8 @@ import { GlobalSearch } from "./GlobalSearch";
 // every surface that references the names reads from here. Apps that need
 // to override for a specific tenant can pass a custom `meta` prop to
 // <LabTopbar /> or render their own sidebar brand.
-export const PRODUCT_NAME = "Integrated Lab Manager";
-export const OS_NAME = "RHINE OS";
+export const PRODUCT_NAME = "Seine Lab OS";
+export const OS_NAME = "SEINE OS";
 export const OS_VERSION = "v1.0";
 export const OS_LABEL = `${OS_NAME} - ${OS_VERSION}`;
 
@@ -297,6 +297,12 @@ export const LabShell = ({
       {topbar}
       {subbar ? <div className="ils-subbar">{subbar}</div> : null}
       <div className={`ils-body${bodyClassName ? ` ${bodyClassName}` : ""}`}>{children}</div>
+      <footer className="ils-foot">
+        <span className="ils-powered">
+          <span className="ils-powered-dot" aria-hidden="true" />
+          POWERED BY <b>VIRIDIAN BLUE</b>
+        </span>
+      </footer>
     </main>
   </div>
 );

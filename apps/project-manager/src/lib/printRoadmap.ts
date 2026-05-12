@@ -323,7 +323,7 @@ export const buildPrintHtml = (input: PrintRoadmapInput): string => {
     ${milestoneSections}
     ${unassignedSection}
     <footer class="doc-footer">
-      <span>Integrated Lab Manager · Project roadmap export</span>
+      <span>Seine Lab OS · Project roadmap export</span>
       <span>${escapeHtml(generatedAt)}</span>
     </footer>
   </body>

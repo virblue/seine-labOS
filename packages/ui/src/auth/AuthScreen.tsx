@@ -55,7 +55,7 @@ export const AuthScreen = () => {
   return (
     <div className="ilm-auth-screen">
       <div className="ilm-auth-card">
-        <h1 className="ilm-auth-title">Integrated Lab Manager</h1>
+        <h1 className="ilm-auth-title">Seine Lab OS</h1>
         <nav className="ilm-auth-tabs" aria-label="Auth mode">
           {(["sign-in", "sign-up", "reset"] as Mode[]).map((m) => (
             <button

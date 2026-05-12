@@ -96,7 +96,7 @@ export const createDefaultProtocol = (): ProtocolDocument => {
       description: "Starter template for Protocol Manager",
       createdAt: now,
       updatedAt: now,
-      authors: ["Integrated Lab Manager"],
+      authors: ["Seine Lab OS"],
       tags: ["PCR", "DNA"],
       metadata: { objective: "Generate target amplicon" },
       reagents: [

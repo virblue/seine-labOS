@@ -428,7 +428,7 @@ export const App = () => {
         <LabTopbar
           kicker="DATA HUB"
           title={TAB_LABELS[tab]}
-          subtitle="Find, register, request, and reuse lab datasets without storing raw files in ILM."
+          subtitle="Find, register, request, and reuse lab datasets without storing raw files in Seine Lab OS."
           baseUrl={APP_BASE_URL}
         />
       }
@@ -569,7 +569,7 @@ function DatasetLibraryView({
     <Panel>
       <SectionHeader title="Dataset library" meta={`${datasets.length} of ${totalCount}`} />
       <InlineNote>
-        ILM stores dataset metadata and storage references only. Raw files stay in their existing lab, cloud, archive, or external locations.
+        Seine Lab OS stores dataset metadata and storage references only. Raw files stay in their existing lab, cloud, archive, or external locations.
       </InlineNote>
       <div className="dh-filter-grid">
         <FormField label="Search">
@@ -1466,7 +1466,7 @@ function DatasetFormModal({
             <Input value={assayPlatform} onChange={(event) => setAssayPlatform(event.target.value)} />
           </FormField>
         </FormRow>
-        <FormField label="Primary storage URI" hint="ILM stores this location reference, not the dataset files.">
+        <FormField label="Primary storage URI" hint="Seine Lab OS stores this location reference, not the dataset files.">
           <Input value={storageUri} onChange={(event) => setStorageUri(event.target.value)} placeholder="/mnt/isilon/... or https://..." />
         </FormField>
         <FormRow>

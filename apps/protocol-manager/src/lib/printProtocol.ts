@@ -668,7 +668,7 @@ export const buildPrintHtml = ({ doc, labName }: PrintProtocolInput): string => 
     ${sectionsHtml}
     ${empty}
     <footer class="doc-footer">
-      <span>Integrated Lab Manager · Protocol export</span>
+      <span>Seine Lab OS · Protocol export</span>
       <span>${escapeHtml(generatedAtLabel)}</span>
     </footer>
   </body>
