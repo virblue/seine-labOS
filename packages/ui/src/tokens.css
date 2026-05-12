@@ -174,6 +174,11 @@ body {
   background: var(--rl-paper);
   color: var(--rl-fg-1);
   font-family: var(--rl-font-body);
+  /* Fluid root font size. Caps at 16px at desktop widths ≥ ~1920px
+     (preserving the previous implicit-default behavior at 1080p and
+     above), and scales down on smaller laptops (≈14px at 1366px). All
+     rem-based components cascade. Desktop-only app; no mobile floor. */
+  font-size: clamp(13px, 0.42vw + 7.9px, 16px);
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
