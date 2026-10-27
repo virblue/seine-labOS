@@ -1,0 +1,29 @@
+{
+  "name": "@ilm/mcp-server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Seine Lab OS MCP server + CLI: lets AI agents read and edit lab data as the signed-in user, under the same RLS as the web apps.",
+  "bin": {
+    "seine": "dist/seine.mjs"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "echo 'no lint configured for @ilm/mcp-server'",
+    "test": "node --test test/*.test.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "@supabase/supabase-js": "^2.104.0",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "esbuild": "^0.25.0",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=22.13"
+  }
+}

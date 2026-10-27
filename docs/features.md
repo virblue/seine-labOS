@@ -6,7 +6,7 @@ Cumulative log of what's shipped. Update after each PR that lands meaningful fun
 
 ## Foundation
 
-- **Monorepo**: npm workspaces with apps (`account`, `data-hub`, `funding-manager`, `project-manager`, `protocol-manager`, `scheduler`, `supply-manager`) and shared packages (`@ilm/ai-import`, `@ilm/types`, `@ilm/ui`, `@ilm/utils`, `@ilm/validation`).
+- **Monorepo**: npm workspaces with apps (`account`, `data-hub`, `funding-manager`, `project-manager`, `protocol-manager`, `scheduler`, `supply-manager`) and shared packages (`@ilm/ai-import`, `@ilm/types`, `@ilm/ui`, `@ilm/utils`, `@ilm/validation`), plus the agent-facing `@ilm/mcp-server` (not deployed to Pages).
 - **Supabase backend**: Postgres schema under `supabase/migrations/`, Supabase Auth for identity, RLS on every app table.
 - **Static deploy**: GitHub Pages, no custom backend server; only `VITE_SUPABASE_URL` + anon key ship to the browser.
 
@@ -128,6 +128,14 @@ A privacy-preserving alias book for routing approved supply orders to the right 
 - **Frontend.** `apps/data-hub` runs inside the shared `<LabShell>` at `/seine-labOS/data-hub/`, mounted to the new Data Hub sidebar slot. The app uses shared `@ilm/ui` primitives (`Panel`, `Table`, `Modal`, `Button`, `Badge`, `StatusPill`, `FormField`, `EmptyState`, `InlineNote`) plus focused `dh-*` local CSS.
 - **Views.** Library tab with search and filters for type, source, status, access, owner, project, and tag; My Datasets tab for owned/requested/incomplete records; Requests tab for requester and owner/admin review queues; dataset detail page with summary, storage/location references, scientific context, linked projects, versions/lineage, requests, and notes.
 - **Forms.** Dataset create/edit covers required metadata, access level, owner/contact, storage URI or accession/citation, recommended use, "do not use for", QC notes, tags, and project links. Version form records parent version, processing summary, software environment, QC/file summary, and version-level storage reference. Request and review modals cover intended use, requested access type, approval conditions, denial notes, withdrawal, and optional reuse-link creation.
+
+## Agent access — MCP server (`packages/mcp-server`)
+
+- **What it is.** `@ilm/mcp-server` builds one self-contained `seine` binary (`dist/seine.mjs`): an MCP server (`seine mcp`) that lets AI agents (Claude Code, Claude Desktop, any MCP client) read and edit lab data, plus a CLI (`seine call <tool>`) exposing the same tools to scripts. Still static-frontend-only: there is no new backend; the binary runs on the agent's machine and talks to Supabase like the browser does.
+- **Acts as the human user.** `seine login` exchanges the user's password once for a Supabase session; only the refreshable session is stored (`~/.config/seine/session.json`, mode 600). Requests use the anon key + that user's access token, so RLS and the existing RPCs apply unchanged — an agent can never do more than its user. Concurrent agent processes share the session and serialize refresh-token rotation under an NFS-safe lock. The `service_role` key is never used.
+- **Attribution.** Agent-written free text ends with `[via agent: <name>]`; every write is appended to a local JSONL log; requests carry `x-seine-client` / `x-seine-agent` headers.
+- **Tools.** Supply: catalog search, item detail (stock history, lots, requests + shipping), low-stock report annotated with open requests, request pipeline; add/edit items, record stock checks, file (draft → submit) and withdraw order requests — duplicate-guarded. Data Hub: search, full record, register, merge-safe edit (loads current state because `update_dataset` replaces tags/links/storage wholesale), add version. Lookups: whoami/labs/roles, projects, members, funding aliases. Approve / place / receive are opt-in (`SEINE_MCP_ENABLE_ADMIN_TOOLS=1`) and still need an owner/admin role. No delete tools.
+- **External registry sync.** `integration_links` (migration `20261027000000`) maps (lab, external system, entity, external id) → Seine record. `seine sync-lab-datasets` / `datahub_sync_lab_registry` mirror a lab's own SQLite dataset registry into Data Hub: dry-run by default, hash-based change detection, refuses to overwrite datasets edited in Seine since the last sync, preserves Seine-side project links and tags, reports removed rows as orphaned.
 
 ## Audit & security
 
