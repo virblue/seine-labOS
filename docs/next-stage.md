@@ -45,6 +45,15 @@ Out of scope: file upload/storage, checksum indexing, HPC directory crawling, Gl
 
 ---
 
+## Parallel track: agent access (MCP) hardening
+
+`packages/mcp-server` shipped v0.1 (see `features.md`). Follow-ups once labs use it:
+
+- **Server-side agent provenance.** Capture the `x-seine-agent` request header (PostgREST exposes it via `current_setting('request.headers')`) into `audit_log.detail`, so the web UI can show "by Zac via agent X" without relying on note suffixes.
+- **Scoped agent sessions.** Today an agent holds the user's full session. Consider a per-user "agent key" (revocable, optionally read-only or supply-only) enforced in RLS via a JWT claim.
+- **More domains.** Scheduler (resource availability / bookings), Protocol Manager (read published protocols), Project Manager (milestones / experiments) — same `ToolDef` pattern.
+- **Integration-link cleanup.** Remove `integration_links` rows when their target record is permanently deleted (today a re-sync recreates the record and repoints the link).
+
 ## Deferred
 
 - **Stage 4d-full - Funding Manager (financial).** The lightweight directory shipped (alias / grant id / validity / brief note for routing approved orders). Full financial tracking remains deferred unless a lab requests it.

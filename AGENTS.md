@@ -5,7 +5,7 @@
 ## Repository
 
 - GitHub: https://github.com/virblue/seine-labOS.git
-- Local path: `/mnt/isilon/wang_lab/zac/projects/ILM` (HPC mount, not yet renamed)
+- Local path: `/mnt/isilon/wang_lab/zac/software/seine` (HPC mount)
 - Primary branch: `main`
 
 ## Project Structure
@@ -26,10 +26,11 @@ npm workspaces monorepo:
 - `ui` (`@ilm/ui`)
 - `utils` (`@ilm/utils`)
 - `validation` (`@ilm/validation`)
+- `mcp-server` (`@ilm/mcp-server`) — MCP server + `seine` CLI so AI agents can read/edit lab data as the signed-in user (see its README; not deployed to Pages)
 
 ## npm / Node Environment
 
-When running on HPC node: `npm` is not available on the host. All npm commands must be run via Singularity:
+When running on the HPC: Node 24 + npm are installed via nvm (`~/.nvm/versions/node/v24.15.0/bin`); run heavy npm work (install/build) through `sbatch`, and keep the npm cache off `/home` (`npm_config_cache=/scr1/users/$USER/...`). Fallback if nvm is unavailable — Singularity:
 
 ```bash
 singularity exec --bind /mnt/isilon/wang_lab/zac/projects/ILM:/work docker://node:24-slim sh -c "cd /work && <npm command>"
